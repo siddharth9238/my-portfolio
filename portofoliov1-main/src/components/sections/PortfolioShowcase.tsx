@@ -186,8 +186,8 @@ export default function PortfolioShowcase() {
                   <p className="text-gray-400 font-medium text-lg mt-1">SaiKet Systems</p>
                 </div>
                 <div className="flex flex-col items-start md:items-end text-sm text-gray-500 gap-1.5">
-                  <span className="flex items-center gap-1.5"><Calendar size={15} className="text-gray-600"/> Jul 2025 - Present</span>
-                  <span className="flex items-center gap-1.5"><MapPin size={15} className="text-gray-600"/> Remote • Internship</span>
+                  <span className="flex items-center gap-1.5"><Calendar size={15} className="text-gray-600"/> Jul 2025 - Aug 2025</span>
+                  <span className="flex items-center gap-1.5"><MapPin size={15} className="text-gray-600"/> Pune, Maharashtra, India • Remote • Internship</span>
                 </div>
               </div>
 
@@ -392,9 +392,12 @@ export default function PortfolioShowcase() {
                     <GraduationCap className="text-gray-300" size={24} />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Master of Computer Applications (MCA)</h3>
-                  <p className="text-gray-400 font-medium">Adamas University, Kolkata</p>
-                  <span className="text-sm text-gray-300 bg-white/5 px-3.5 py-1.5 rounded-full mt-4 inline-block font-semibold shadow-sm border border-white/10">
-                    Expected 2026
+                  <div className="flex flex-col gap-1 mb-4">
+                    <p className="text-gray-400 font-medium">Adamas University, Kolkata</p>
+                    <p className="text-gray-500 text-sm">CGPA: <span className="text-gray-300 font-semibold">8.5/10</span></p>
+                  </div>
+                  <span className="text-sm text-gray-300 bg-white/5 px-3.5 py-1.5 rounded-full inline-block font-semibold shadow-sm border border-white/10">
+                    2024 – 2026
                   </span>
                 </div>
 
@@ -404,8 +407,11 @@ export default function PortfolioShowcase() {
                     <GraduationCap className="text-gray-300" size={24} />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Bachelor of Computer Applications (BCA)</h3>
-                  <p className="text-gray-400 font-medium">Utkal University, Bhubaneswar</p>
-                  <span className="text-sm text-gray-300 bg-white/5 px-3.5 py-1.5 rounded-full mt-4 inline-block font-semibold shadow-sm border border-white/10">
+                  <div className="flex flex-col gap-1 mb-4">
+                    <p className="text-gray-400 font-medium">Utkal University, Bhubaneswar</p>
+                    <p className="text-gray-500 text-sm">CGPA: <span className="text-gray-300 font-semibold">7.0/10</span></p>
+                  </div>
+                  <span className="text-sm text-gray-300 bg-white/5 px-3.5 py-1.5 rounded-full inline-block font-semibold shadow-sm border border-white/10">
                     2021 – 2024
                   </span>
                 </div>
