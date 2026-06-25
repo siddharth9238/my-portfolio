@@ -92,11 +92,12 @@ export default function PortfolioShowcase() {
 
         {/* TABS */}
         <div className="flex justify-center mb-10">
-          <div className="w-full max-w-3xl rounded-full border border-white/10 bg-white/5 p-2 flex gap-2 backdrop-blur-xl">
+          <div className="w-full max-w-4xl rounded-full border border-white/10 bg-white/5 p-2 flex gap-2 backdrop-blur-xl flex-wrap sm:flex-nowrap">
             {[
               'projects',
               'certificates',
               'techstack',
+              'experience',
             ].map((tab) => (
               <button
                 key={tab}
@@ -106,7 +107,7 @@ export default function PortfolioShowcase() {
                     setShowAllProjects(false)
                   }
                 }}
-                className={`flex-1 rounded-full py-3 text-sm font-medium transition-all duration-300 ${
+                className={`flex-1 rounded-full py-3 px-4 text-sm font-medium transition-all duration-300 min-w-[100px] ${
                   activeTab === tab
                     ? 'bg-white/10 text-white'
                     : 'text-white/50 hover:text-white'
@@ -116,7 +117,9 @@ export default function PortfolioShowcase() {
                   ? 'Projects'
                   : tab === 'certificates'
                   ? 'Certificates'
-                  : 'Tech Stack'}
+                  : tab === 'techstack'
+                  ? 'Tech Stack'
+                  : 'Experience'}
               </button>
             ))}
           </div>
@@ -349,6 +352,87 @@ export default function PortfolioShowcase() {
                         </p>
                       </motion.div>
                     ))}
+                </div>
+              </div>
+            )}
+
+            {/* EXPERIENCE TAB */}
+            {activeTab === 'experience' && (
+              <div className="relative h-[450px] overflow-hidden group">
+                
+                {/* Top and Bottom Gradient Fades (Makes it look like it's appearing out of nowhere) */}
+                <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none"></div>
+
+                {/* The Scrolling Track (Pauses on Hover!) */}
+                <div className="flex flex-col gap-6 animate-scroll-y group-hover:[animation-play-state:paused] pt-8 pb-8">
+                  
+                  {/* --- FIRST SET OF CARDS --- */}
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors backdrop-blur-sm max-w-4xl mx-auto w-full">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-white">Full Stack Web & Software Developer Intern</h3>
+                        <p className="text-emerald-400 font-medium mt-1">SaiKet Systems</p>
+                      </div>
+                      <span className="text-sm text-gray-400 bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0 border border-white/10">
+                        July 2025 – Present
+                      </span>
+                    </div>
+                    <ul className="list-disc list-inside text-gray-400 space-y-2 mt-4 text-sm md:text-base">
+                      <li>Developing and maintaining full-stack web applications and software solutions.</li>
+                      <li>Completing technical tasks and collaborating on system architecture.</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors backdrop-blur-sm max-w-4xl mx-auto w-full">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-white">Data Analyst Intern</h3>
+                        <p className="text-emerald-400 font-medium mt-1">Cognifyz Technologies</p>
+                      </div>
+                      <span className="text-sm text-gray-400 bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0 border border-white/10">
+                        July 2025 – Present
+                      </span>
+                    </div>
+                    <ul className="list-disc list-inside text-gray-400 space-y-2 mt-4 text-sm md:text-base">
+                      <li>Analyzing datasets and extracting actionable insights for project requirements.</li>
+                      <li>Utilizing data analysis tools to complete assigned internship projects.</li>
+                    </ul>
+                  </div>
+
+                  {/* --- SECOND SET OF CARDS (Duplicated for the seamless infinite loop) --- */}
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors backdrop-blur-sm max-w-4xl mx-auto w-full">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-white">Full Stack Web & Software Developer Intern</h3>
+                        <p className="text-emerald-400 font-medium mt-1">SaiKet Systems</p>
+                      </div>
+                      <span className="text-sm text-gray-400 bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0 border border-white/10">
+                        July 2025 – Present
+                      </span>
+                    </div>
+                    <ul className="list-disc list-inside text-gray-400 space-y-2 mt-4 text-sm md:text-base">
+                      <li>Developing and maintaining full-stack web applications and software solutions.</li>
+                      <li>Completing technical tasks and collaborating on system architecture.</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors backdrop-blur-sm max-w-4xl mx-auto w-full">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-white">Data Analyst Intern</h3>
+                        <p className="text-emerald-400 font-medium mt-1">Cognifyz Technologies</p>
+                      </div>
+                      <span className="text-sm text-gray-400 bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0 border border-white/10">
+                        July 2025 – Present
+                      </span>
+                    </div>
+                    <ul className="list-disc list-inside text-gray-400 space-y-2 mt-4 text-sm md:text-base">
+                      <li>Analyzing datasets and extracting actionable insights for project requirements.</li>
+                      <li>Utilizing data analysis tools to complete assigned internship projects.</li>
+                    </ul>
+                  </div>
+
                 </div>
               </div>
             )}
