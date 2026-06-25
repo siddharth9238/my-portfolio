@@ -73,12 +73,12 @@ export default function PortfolioShowcase() {
           className="mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-2 flex items-center">
-            Work Experience<span className="text-[#38bdf8]">.</span>
+            Work Experience<span className="text-white/30">.</span>
           </h2>
         </motion.div>
 
         {/* Timeline Container */}
-        <div className="relative border-l-[3px] border-[#1e293b] pl-6 md:pl-10 ml-4 md:ml-6 space-y-16">
+        <div className="relative border-l-[3px] border-white/10 pl-6 md:pl-10 ml-4 md:ml-6 space-y-16">
           
           {/* Experience Item 1 */}
           <motion.div
@@ -89,38 +89,38 @@ export default function PortfolioShowcase() {
             className="relative group"
           >
             {/* Glowing Dot */}
-            <div className="absolute -left-[32px] md:-left-[48px] top-2 w-4 h-4 bg-[#38bdf8] rounded-full shadow-[0_0_15px_#38bdf8] border-[3px] border-[#0f172a] group-hover:scale-125 transition-transform duration-300"></div>
+            <div className="absolute -left-[32px] md:-left-[48px] top-2 w-4 h-4 bg-gray-400 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.1)] border-[3px] border-[#121212] group-hover:scale-125 transition-transform duration-300"></div>
 
-            <div className="bg-[#111827]/80 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-[#38bdf8]/30 transition-all duration-300 shadow-lg">
+            <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8 hover:border-white/20 transition-all duration-300 shadow-lg backdrop-blur-sm">
               <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
                 <div>
                   <h3 className="text-2xl font-bold text-white tracking-wide">Trainee</h3>
-                  <p className="text-[#38bdf8] font-medium text-lg mt-1">Nvisagecomp solutions LLP</p>
+                  <p className="text-gray-400 font-medium text-lg mt-1">Nvisagecomp solutions LLP</p>
                 </div>
-                <div className="flex flex-col items-start md:items-end text-sm text-gray-400 gap-1.5">
-                  <span className="flex items-center gap-1.5"><Calendar size={15} className="text-gray-500"/> Nov 2025 - Apr 2026</span>
-                  <span className="flex items-center gap-1.5"><MapPin size={15} className="text-gray-500"/> Bengaluru, Karnataka, India • On-site • Internship</span>
+                <div className="flex flex-col items-start md:items-end text-sm text-gray-500 gap-1.5">
+                  <span className="flex items-center gap-1.5"><Calendar size={15} className="text-gray-600"/> Nov 2025 - Apr 2026</span>
+                  <span className="flex items-center gap-1.5"><MapPin size={15} className="text-gray-600"/> Bengaluru, Karnataka, India • On-site • Internship</span>
                 </div>
               </div>
 
-              <ul className="space-y-3 text-gray-300/90 text-[15px] leading-relaxed mb-6">
+              <ul className="space-y-3 text-gray-400 text-[15px] leading-relaxed mb-6">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span className="text-gray-500 mt-0.5">›</span>
                   <span>Shipped full-stack features for an enterprise client, utilizing AJAX to asynchronously connect a React frontend with a Java/Spring Boot backend.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span className="text-gray-500 mt-0.5">›</span>
                   <span>Formulated and deployed endpoints managing core business logic, including database-backed CRUD operations and structured error handling.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span className="text-gray-500 mt-0.5">›</span>
                   <span>Ensured enterprise-grade code quality by identifying and rectifying server-side bugs and vulnerabilities flagged by SonarQube.</span>
                 </li>
               </ul>
 
               <div className="flex flex-wrap gap-2.5">
                 {['React', 'Java', 'Spring Boot', 'AJAX', 'SonarQube'].map((tech) => (
-                  <span key={tech} className="px-3.5 py-1 text-xs font-semibold bg-[#0c4a6e] text-[#7dd3fc] rounded-full border border-[#0284c7]/30 shadow-sm">
+                  <span key={tech} className="px-3.5 py-1 text-xs font-semibold bg-white/5 text-gray-300 rounded-full border border-white/10 shadow-sm">
                     {tech}
                   </span>
                 ))}
@@ -137,30 +137,30 @@ export default function PortfolioShowcase() {
             className="relative group"
           >
             {/* Glowing Dot */}
-            <div className="absolute -left-[32px] md:-left-[48px] top-2 w-4 h-4 bg-[#38bdf8] rounded-full shadow-[0_0_15px_#38bdf8] border-[3px] border-[#0f172a] group-hover:scale-125 transition-transform duration-300"></div>
+            <div className="absolute -left-[32px] md:-left-[48px] top-2 w-4 h-4 bg-gray-400 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.1)] border-[3px] border-[#121212] group-hover:scale-125 transition-transform duration-300"></div>
 
-            <div className="bg-[#111827]/80 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-[#38bdf8]/30 transition-all duration-300 shadow-lg">
+            <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8 hover:border-white/20 transition-all duration-300 shadow-lg backdrop-blur-sm">
               <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
                 <div>
                   <h3 className="text-2xl font-bold text-white tracking-wide">Full Stack Web Developer Intern</h3>
-                  <p className="text-[#38bdf8] font-medium text-lg mt-1">YHills</p>
+                  <p className="text-gray-400 font-medium text-lg mt-1">YHills</p>
                 </div>
-                <div className="flex flex-col items-start md:items-end text-sm text-gray-400 gap-1.5">
-                  <span className="flex items-center gap-1.5"><Calendar size={15} className="text-gray-500"/> Jul 2025 - Oct 2025</span>
-                  <span className="flex items-center gap-1.5"><MapPin size={15} className="text-gray-500"/> Noida, Uttarpradesh, India • Hybrid • Internship</span>
+                <div className="flex flex-col items-start md:items-end text-sm text-gray-500 gap-1.5">
+                  <span className="flex items-center gap-1.5"><Calendar size={15} className="text-gray-600"/> Jul 2025 - Oct 2025</span>
+                  <span className="flex items-center gap-1.5"><MapPin size={15} className="text-gray-600"/> Noida, Uttarpradesh, India • Hybrid • Internship</span>
                 </div>
               </div>
 
-              <ul className="space-y-3 text-gray-300/90 text-[15px] leading-relaxed mb-6">
+              <ul className="space-y-3 text-gray-400 text-[15px] leading-relaxed mb-6">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span className="text-gray-500 mt-0.5">›</span>
                   <span>Programmed scalable modules, integrating Web Services by constructing Java backends and consuming data asynchronously from a React frontend using AJAX.</span>
                 </li>
               </ul>
 
               <div className="flex flex-wrap gap-2.5">
                 {['React', 'Java', 'AJAX', 'Web Services'].map((tech) => (
-                  <span key={tech} className="px-3.5 py-1 text-xs font-semibold bg-[#0c4a6e] text-[#7dd3fc] rounded-full border border-[#0284c7]/30 shadow-sm">
+                  <span key={tech} className="px-3.5 py-1 text-xs font-semibold bg-white/5 text-gray-300 rounded-full border border-white/10 shadow-sm">
                     {tech}
                   </span>
                 ))}
@@ -177,27 +177,27 @@ export default function PortfolioShowcase() {
             className="relative group"
           >
             {/* Glowing Dot */}
-            <div className="absolute -left-[32px] md:-left-[48px] top-2 w-4 h-4 bg-[#38bdf8] rounded-full shadow-[0_0_15px_#38bdf8] border-[3px] border-[#0f172a] group-hover:scale-125 transition-transform duration-300"></div>
+            <div className="absolute -left-[32px] md:-left-[48px] top-2 w-4 h-4 bg-gray-400 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.1)] border-[3px] border-[#121212] group-hover:scale-125 transition-transform duration-300"></div>
 
-            <div className="bg-[#111827]/80 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-[#38bdf8]/30 transition-all duration-300 shadow-lg">
+            <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8 hover:border-white/20 transition-all duration-300 shadow-lg backdrop-blur-sm">
               <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
                 <div>
                   <h3 className="text-2xl font-bold text-white tracking-wide">Software Developer Intern</h3>
-                  <p className="text-[#38bdf8] font-medium text-lg mt-1">SaiKet Systems</p>
+                  <p className="text-gray-400 font-medium text-lg mt-1">SaiKet Systems</p>
                 </div>
-                <div className="flex flex-col items-start md:items-end text-sm text-gray-400 gap-1.5">
-                  <span className="flex items-center gap-1.5"><Calendar size={15} className="text-gray-500"/> Jul 2025 - Present</span>
-                  <span className="flex items-center gap-1.5"><MapPin size={15} className="text-gray-500"/> Remote • Internship</span>
+                <div className="flex flex-col items-start md:items-end text-sm text-gray-500 gap-1.5">
+                  <span className="flex items-center gap-1.5"><Calendar size={15} className="text-gray-600"/> Jul 2025 - Present</span>
+                  <span className="flex items-center gap-1.5"><MapPin size={15} className="text-gray-600"/> Remote • Internship</span>
                 </div>
               </div>
 
-              <ul className="space-y-3 text-gray-300/90 text-[15px] leading-relaxed mb-6">
+              <ul className="space-y-3 text-gray-400 text-[15px] leading-relaxed mb-6">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span className="text-gray-500 mt-0.5">›</span>
                   <span>Developing and maintaining full-stack web applications and software solutions.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span className="text-gray-500 mt-0.5">›</span>
                   <span>Completing technical tasks and collaborating on system architecture.</span>
                 </li>
               </ul>
@@ -382,30 +382,30 @@ export default function PortfolioShowcase() {
               </div>
             )}
 
-            {/* EDUCATION TAB (Replaced Experience) */}
+            {/* EDUCATION TAB */}
             {activeTab === 'education' && (
               <div className="grid md:grid-cols-2 gap-6 mt-4 animate-fade-in max-w-5xl mx-auto w-full">
                 
                 {/* MCA */}
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-[#38bdf8]/40 transition-colors backdrop-blur-sm group">
-                  <div className="w-12 h-12 rounded-full bg-[#38bdf8]/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                    <GraduationCap className="text-[#38bdf8]" size={24} />
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-colors backdrop-blur-sm group">
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform border border-white/10">
+                    <GraduationCap className="text-gray-300" size={24} />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Master of Computer Applications (MCA)</h3>
-                  <p className="text-gray-300 font-medium">Adamas University, Kolkata</p>
-                  <span className="text-sm text-[#38bdf8] bg-[#0c4a6e] px-3.5 py-1.5 rounded-full mt-4 inline-block font-semibold shadow-sm border border-[#0284c7]/30">
+                  <p className="text-gray-400 font-medium">Adamas University, Kolkata</p>
+                  <span className="text-sm text-gray-300 bg-white/5 px-3.5 py-1.5 rounded-full mt-4 inline-block font-semibold shadow-sm border border-white/10">
                     Expected 2026
                   </span>
                 </div>
 
                 {/* BCA */}
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-[#38bdf8]/40 transition-colors backdrop-blur-sm group">
-                  <div className="w-12 h-12 rounded-full bg-[#38bdf8]/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                    <GraduationCap className="text-[#38bdf8]" size={24} />
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-colors backdrop-blur-sm group">
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform border border-white/10">
+                    <GraduationCap className="text-gray-300" size={24} />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Bachelor of Computer Applications (BCA)</h3>
-                  <p className="text-gray-300 font-medium">Utkal University, Bhubaneswar</p>
-                  <span className="text-sm text-[#38bdf8] bg-[#0c4a6e] px-3.5 py-1.5 rounded-full mt-4 inline-block font-semibold shadow-sm border border-[#0284c7]/30">
+                  <p className="text-gray-400 font-medium">Utkal University, Bhubaneswar</p>
+                  <span className="text-sm text-gray-300 bg-white/5 px-3.5 py-1.5 rounded-full mt-4 inline-block font-semibold shadow-sm border border-white/10">
                     2021 – 2024
                   </span>
                 </div>
