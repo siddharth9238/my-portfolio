@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, ChevronDown, ChevronUp, Database } from 'lucide-react'
+import { X, ChevronDown, ChevronUp, Database, Calendar, MapPin, GraduationCap } from 'lucide-react'
 import usePortfolio from '@/hooks/usePortfolio'
 import PortfolioCard from './PortfolioCard'
 
@@ -49,18 +49,9 @@ export default function PortfolioShowcase() {
             </button>
 
             <motion.img
-              initial={{
-                scale: 0.92,
-                opacity: 0,
-              }}
-              animate={{
-                scale: 1,
-                opacity: 1,
-              }}
-              exit={{
-                scale: 0.92,
-                opacity: 0,
-              }}
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.92, opacity: 0 }}
               transition={{ duration: 0.35 }}
               src={previewImage}
               className="max-w-[88vw] max-h-[88vh] rounded-3xl object-contain"
@@ -69,24 +60,170 @@ export default function PortfolioShowcase() {
         )}
       </AnimatePresence>
 
+      {/* --- STANDALONE WORK EXPERIENCE TIMELINE --- */}
+      <section
+        id="experience"
+        className="w-full max-w-[1200px] mx-auto px-8 md:px-12 lg:px-20 pt-24 pb-12 text-white"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-2 flex items-center">
+            Work Experience<span className="text-[#38bdf8]">.</span>
+          </h2>
+        </motion.div>
+
+        {/* Timeline Container */}
+        <div className="relative border-l-[3px] border-[#1e293b] pl-6 md:pl-10 ml-4 md:ml-6 space-y-16">
+          
+          {/* Experience Item 1 */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative group"
+          >
+            {/* Glowing Dot */}
+            <div className="absolute -left-[32px] md:-left-[48px] top-2 w-4 h-4 bg-[#38bdf8] rounded-full shadow-[0_0_15px_#38bdf8] border-[3px] border-[#0f172a] group-hover:scale-125 transition-transform duration-300"></div>
+
+            <div className="bg-[#111827]/80 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-[#38bdf8]/30 transition-all duration-300 shadow-lg">
+              <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-white tracking-wide">Trainee</h3>
+                  <p className="text-[#38bdf8] font-medium text-lg mt-1">Nvisagecomp solutions LLP</p>
+                </div>
+                <div className="flex flex-col items-start md:items-end text-sm text-gray-400 gap-1.5">
+                  <span className="flex items-center gap-1.5"><Calendar size={15} className="text-gray-500"/> Nov 2025 - Apr 2026</span>
+                  <span className="flex items-center gap-1.5"><MapPin size={15} className="text-gray-500"/> Bengaluru, Karnataka, India • On-site • Internship</span>
+                </div>
+              </div>
+
+              <ul className="space-y-3 text-gray-300/90 text-[15px] leading-relaxed mb-6">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span>Shipped full-stack features for an enterprise client, utilizing AJAX to asynchronously connect a React frontend with a Java/Spring Boot backend.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span>Formulated and deployed endpoints managing core business logic, including database-backed CRUD operations and structured error handling.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span>Ensured enterprise-grade code quality by identifying and rectifying server-side bugs and vulnerabilities flagged by SonarQube.</span>
+                </li>
+              </ul>
+
+              <div className="flex flex-wrap gap-2.5">
+                {['React', 'Java', 'Spring Boot', 'AJAX', 'SonarQube'].map((tech) => (
+                  <span key={tech} className="px-3.5 py-1 text-xs font-semibold bg-[#0c4a6e] text-[#7dd3fc] rounded-full border border-[#0284c7]/30 shadow-sm">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Experience Item 2 */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="relative group"
+          >
+            {/* Glowing Dot */}
+            <div className="absolute -left-[32px] md:-left-[48px] top-2 w-4 h-4 bg-[#38bdf8] rounded-full shadow-[0_0_15px_#38bdf8] border-[3px] border-[#0f172a] group-hover:scale-125 transition-transform duration-300"></div>
+
+            <div className="bg-[#111827]/80 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-[#38bdf8]/30 transition-all duration-300 shadow-lg">
+              <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-white tracking-wide">Full Stack Web Developer Intern</h3>
+                  <p className="text-[#38bdf8] font-medium text-lg mt-1">YHills</p>
+                </div>
+                <div className="flex flex-col items-start md:items-end text-sm text-gray-400 gap-1.5">
+                  <span className="flex items-center gap-1.5"><Calendar size={15} className="text-gray-500"/> Jul 2025 - Oct 2025</span>
+                  <span className="flex items-center gap-1.5"><MapPin size={15} className="text-gray-500"/> Noida, Uttarpradesh, India • Hybrid • Internship</span>
+                </div>
+              </div>
+
+              <ul className="space-y-3 text-gray-300/90 text-[15px] leading-relaxed mb-6">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span>Programmed scalable modules, integrating Web Services by constructing Java backends and consuming data asynchronously from a React frontend using AJAX.</span>
+                </li>
+              </ul>
+
+              <div className="flex flex-wrap gap-2.5">
+                {['React', 'Java', 'AJAX', 'Web Services'].map((tech) => (
+                  <span key={tech} className="px-3.5 py-1 text-xs font-semibold bg-[#0c4a6e] text-[#7dd3fc] rounded-full border border-[#0284c7]/30 shadow-sm">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Experience Item 3 (SaiKet) */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="relative group"
+          >
+            {/* Glowing Dot */}
+            <div className="absolute -left-[32px] md:-left-[48px] top-2 w-4 h-4 bg-[#38bdf8] rounded-full shadow-[0_0_15px_#38bdf8] border-[3px] border-[#0f172a] group-hover:scale-125 transition-transform duration-300"></div>
+
+            <div className="bg-[#111827]/80 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-[#38bdf8]/30 transition-all duration-300 shadow-lg">
+              <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-white tracking-wide">Software Developer Intern</h3>
+                  <p className="text-[#38bdf8] font-medium text-lg mt-1">SaiKet Systems</p>
+                </div>
+                <div className="flex flex-col items-start md:items-end text-sm text-gray-400 gap-1.5">
+                  <span className="flex items-center gap-1.5"><Calendar size={15} className="text-gray-500"/> Jul 2025 - Present</span>
+                  <span className="flex items-center gap-1.5"><MapPin size={15} className="text-gray-500"/> Remote • Internship</span>
+                </div>
+              </div>
+
+              <ul className="space-y-3 text-gray-300/90 text-[15px] leading-relaxed mb-6">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span>Developing and maintaining full-stack web applications and software solutions.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#38bdf8] mt-0.5">›</span>
+                  <span>Completing technical tasks and collaborating on system architecture.</span>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
+      {/* --- PORTFOLIO SHOWCASE SECTION --- */}
       <section
         id="portfolio"
-        className="w-full max-w-[1450px] mx-auto px-8 md:px-12 lg:px-20 pt-24 pb-24 text-white"
+        className="w-full max-w-[1450px] mx-auto px-8 md:px-12 lg:px-20 pt-12 pb-24 text-white"
       >
-        {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="text-center mb-8"
+          className="text-center mb-10"
         >
           <h1 className="text-3xl md:text-5xl font-bold mb-3">
             Portfolio Showcase
           </h1>
-
           <p className="text-white/55 max-w-xl mx-auto text-sm md:text-base">
-            Explore my journey through projects,
-            certifications, and technical expertise.
+            Explore my journey through projects, certifications, and academic background.
           </p>
         </motion.div>
 
@@ -97,15 +234,13 @@ export default function PortfolioShowcase() {
               'projects',
               'certificates',
               'techstack',
-              'experience',
+              'education',
             ].map((tab) => (
               <button
                 key={tab}
                 onClick={() => {
                   setActiveTab(tab)
-                  if (tab !== 'projects') {
-                    setShowAllProjects(false)
-                  }
+                  if (tab !== 'projects') setShowAllProjects(false)
                 }}
                 className={`flex-1 rounded-full py-3 px-4 text-sm font-medium transition-all duration-300 min-w-[100px] ${
                   activeTab === tab
@@ -119,7 +254,7 @@ export default function PortfolioShowcase() {
                   ? 'Certificates'
                   : tab === 'techstack'
                   ? 'Tech Stack'
-                  : 'Experience'}
+                  : 'Education'}
               </button>
             ))}
           </div>
@@ -136,7 +271,6 @@ export default function PortfolioShowcase() {
             {/* PROJECTS TAB */}
             {activeTab === 'projects' && (
               <div className="space-y-8 min-h-[300px]">
-                {/* Empty State Handler */}
                 {!loading && projects.length === 0 && (
                    <div className="flex flex-col items-center justify-center h-full text-white/40 pt-10">
                      <Database size={40} className="mb-4 opacity-50" />
@@ -144,69 +278,32 @@ export default function PortfolioShowcase() {
                      <p className="text-sm mt-1">Log into the admin dashboard to add your first project!</p>
                    </div>
                 )}
-
-                <motion.div
-                  layout
-                  transition={{
-                    layout: {
-                      duration: 0.75,
-                      ease: smoothEase,
-                    },
-                  }}
-                  className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 px-1"
-                >
+                <motion.div layout transition={{ layout: { duration: 0.75, ease: smoothEase } }} className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 px-1">
                   <AnimatePresence mode="popLayout">
                     {!loading &&
-                      displayedProjects.map(
-                        (item, i) => (
-                          <motion.div
-                            key={item.id}
-                            layout
-                            initial={{
-                              opacity: 0,
-                              y: 40,
-                              scale: 0.96,
-                            }}
-                            animate={{
-                              opacity: 1,
-                              y: 0,
-                              scale: 1,
-                            }}
-                            exit={{
-                              opacity: 0,
-                              y: -30,
-                              scale: 0.95,
-                            }}
-                            transition={{
-                              duration: 0.55,
-                              delay: i * 0.04,
-                              ease: smoothEase,
-                            }}
-                          >
-                            <PortfolioCard
-                              index={i}
-                              title={item.title}
-                              description={item.description}
-                              image={item.image_url}
-                              live_url={item.live_url}
-                              id={item.id}
-                            />
-                          </motion.div>
-                        )
-                      )}
+                      displayedProjects.map((item, i) => (
+                        <motion.div
+                          key={item.id}
+                          layout
+                          initial={{ opacity: 0, y: 40, scale: 0.96 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -30, scale: 0.95 }}
+                          transition={{ duration: 0.55, delay: i * 0.04, ease: smoothEase }}
+                        >
+                          <PortfolioCard
+                            index={i}
+                            title={item.title}
+                            description={item.description}
+                            image={item.image_url}
+                            live_url={item.live_url}
+                            id={item.id}
+                          />
+                        </motion.div>
+                      ))}
                   </AnimatePresence>
                 </motion.div>
-
-                {/* SEE MORE / LESS BUTTON */}
                 {!loading && projects.length > 3 && (
-                  <motion.div
-                    layout
-                    transition={{
-                      duration: 0.6,
-                      ease: smoothEase,
-                    }}
-                    className="flex justify-center"
-                  >
+                  <motion.div layout transition={{ duration: 0.6, ease: smoothEase }} className="flex justify-center">
                     <motion.button
                       layout
                       whileHover={{ scale: 1.04 }}
@@ -215,25 +312,8 @@ export default function PortfolioShowcase() {
                       className="px-6 py-3 rounded-full border border-white/10 bg-white/[0.05] backdrop-blur-xl text-sm text-white/75 hover:text-white transition flex items-center gap-2"
                     >
                       <AnimatePresence mode="wait">
-                        <motion.div
-                          key={showAllProjects ? 'less' : 'more'}
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -8 }}
-                          transition={{ duration: 0.25 }}
-                          className="flex items-center gap-2"
-                        >
-                          {showAllProjects ? (
-                            <>
-                              <ChevronUp size={16} />
-                              See Less
-                            </>
-                          ) : (
-                            <>
-                              <ChevronDown size={16} />
-                              See More
-                            </>
-                          )}
+                        <motion.div key={showAllProjects ? 'less' : 'more'} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }} className="flex items-center gap-2">
+                          {showAllProjects ? <><ChevronUp size={16} /> See Less</> : <><ChevronDown size={16} /> See More</>}
                         </motion.div>
                       </AnimatePresence>
                     </motion.button>
@@ -245,53 +325,29 @@ export default function PortfolioShowcase() {
             {/* CERTIFICATES TAB */}
             {activeTab === 'certificates' && (
               <div className="min-h-[300px]">
-                {/* Empty State Handler */}
                 {!loading && certificates.length === 0 && (
                    <div className="flex flex-col items-center justify-center h-full text-white/40 pt-10">
                      <Database size={40} className="mb-4 opacity-50" />
                      <p>No certificates uploaded yet.</p>
                    </div>
                 )}
-
                 <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 px-1">
-                  {!loading &&
-                    certificates.map((item, i) => (
-                      <motion.div
-                        key={item.id}
-                        initial={{
-                          opacity: 0,
-                          y: 25,
-                          scale: 0.96,
-                        }}
-                        whileInView={{
-                          opacity: 1,
-                          y: 0,
-                          scale: 1,
-                        }}
-                        transition={{
-                          duration: 0.5,
-                          delay: i * 0.04,
-                        }}
-                        whileHover={{ y: -4 }}
-                        onClick={() => {
-                          setPreviewImage(item.image_url)
-                          setPreviewOpen(true)
-                        }}
-                        className="group cursor-pointer rounded-[26px] border border-white/10 bg-white/5 p-4 backdrop-blur-xl"
-                      >
-                        <div className="rounded-2xl overflow-hidden border border-white/10 h-56">
-                          <img
-                            src={item.image_url}
-                            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                            alt={item.title}
-                          />
-                        </div>
-
-                        <h3 className="mt-4 text-[15px] font-semibold text-center text-white/90">
-                          {item.title}
-                        </h3>
-                      </motion.div>
-                    ))}
+                  {!loading && certificates.map((item, i) => (
+                    <motion.div
+                      key={item.id}
+                      initial={{ opacity: 0, y: 25, scale: 0.96 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ duration: 0.5, delay: i * 0.04 }}
+                      whileHover={{ y: -4 }}
+                      onClick={() => { setPreviewImage(item.image_url); setPreviewOpen(true); }}
+                      className="group cursor-pointer rounded-[26px] border border-white/10 bg-white/5 p-4 backdrop-blur-xl"
+                    >
+                      <div className="rounded-2xl overflow-hidden border border-white/10 h-56">
+                        <img src={item.image_url} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt={item.title} />
+                      </div>
+                      <h3 className="mt-4 text-[15px] font-semibold text-center text-white/90">{item.title}</h3>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             )}
@@ -299,141 +355,61 @@ export default function PortfolioShowcase() {
             {/* TECH STACK TAB */}
             {activeTab === 'techstack' && (
               <div className="min-h-[360px] flex justify-center">
-                 {/* Empty State Handler */}
                  {!loading && techStacks?.length === 0 && (
                    <div className="flex flex-col items-center justify-center h-full text-white/40 pt-10">
                      <Database size={40} className="mb-4 opacity-50" />
                      <p>No tech stack added yet.</p>
                    </div>
                 )}
-
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 max-w-5xl w-full">
-                  {!loading &&
-                    techStacks?.map((item, index) => (
-                      <motion.div
-                        key={item.id}
-                        initial={{
-                          opacity: 0,
-                          scale: 0.9,
-                          y: 20,
-                        }}
-                        whileInView={{
-                          opacity: 1,
-                          scale: 1,
-                          y: 0,
-                        }}
-                        transition={{
-                          duration: 0.45,
-                          delay: index * 0.04,
-                        }}
-                        whileHover={{
-                          y: -5,
-                          scale: 1.04,
-                        }}
-                        className="group rounded-[24px] border border-white/10 bg-white/[0.04] backdrop-blur-xl flex flex-col items-center justify-center gap-3 h-[125px] w-[125px] mx-auto"
-                      >
-                        <div className="relative flex items-center justify-center">
-                          {/* GLOW */}
-                          <div className="absolute w-[70px] h-[70px] rounded-full bg-white/20 blur-2xl opacity-0 group-hover:opacity-100 transition duration-500" />
-
-                          {item.logo_url ? (
-                            <img
-                              src={item.logo_url}
-                              alt={item.name}
-                              className="relative z-10 w-[56px] h-[56px] object-contain"
-                            />
-                          ) : (
-                            <div className="relative z-10 w-[56px] h-[56px] rounded-2xl bg-white/10" />
-                          )}
-                        </div>
-
-                        <p className="text-[11px] text-white/80 text-center leading-tight px-2 line-clamp-1">
-                          {item.name}
-                        </p>
-                      </motion.div>
-                    ))}
+                  {!loading && techStacks?.map((item, index) => (
+                    <motion.div
+                      key={item.id}
+                      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                      transition={{ duration: 0.45, delay: index * 0.04 }}
+                      whileHover={{ y: -5, scale: 1.04 }}
+                      className="group rounded-[24px] border border-white/10 bg-white/[0.04] backdrop-blur-xl flex flex-col items-center justify-center gap-3 h-[125px] w-[125px] mx-auto"
+                    >
+                      <div className="relative flex items-center justify-center">
+                        <div className="absolute w-[70px] h-[70px] rounded-full bg-white/20 blur-2xl opacity-0 group-hover:opacity-100 transition duration-500" />
+                        {item.logo_url ? <img src={item.logo_url} alt={item.name} className="relative z-10 w-[56px] h-[56px] object-contain" /> : <div className="relative z-10 w-[56px] h-[56px] rounded-2xl bg-white/10" />}
+                      </div>
+                      <p className="text-[11px] text-white/80 text-center leading-tight px-2 line-clamp-1">{item.name}</p>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             )}
 
-            {/* EXPERIENCE TAB */}
-            {activeTab === 'experience' && (
-              <div className="relative h-[450px] overflow-hidden group">
+            {/* EDUCATION TAB (Replaced Experience) */}
+            {activeTab === 'education' && (
+              <div className="grid md:grid-cols-2 gap-6 mt-4 animate-fade-in max-w-5xl mx-auto w-full">
                 
-                {/* Top and Bottom Gradient Fades (Makes it look like it's appearing out of nowhere) */}
-                <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none"></div>
-
-                {/* The Scrolling Track (Pauses on Hover!) */}
-                <div className="flex flex-col gap-6 animate-scroll-y group-hover:[animation-play-state:paused] pt-8 pb-8">
-                  
-                  {/* --- FIRST SET OF CARDS --- */}
-                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors backdrop-blur-sm max-w-4xl mx-auto w-full">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-white">Full Stack Web & Software Developer Intern</h3>
-                        <p className="text-emerald-400 font-medium mt-1">SaiKet Systems</p>
-                      </div>
-                      <span className="text-sm text-gray-400 bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0 border border-white/10">
-                        July 2025 – Present
-                      </span>
-                    </div>
-                    <ul className="list-disc list-inside text-gray-400 space-y-2 mt-4 text-sm md:text-base">
-                      <li>Developing and maintaining full-stack web applications and software solutions.</li>
-                      <li>Completing technical tasks and collaborating on system architecture.</li>
-                    </ul>
+                {/* MCA */}
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-[#38bdf8]/40 transition-colors backdrop-blur-sm group">
+                  <div className="w-12 h-12 rounded-full bg-[#38bdf8]/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                    <GraduationCap className="text-[#38bdf8]" size={24} />
                   </div>
-
-                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors backdrop-blur-sm max-w-4xl mx-auto w-full">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-white">Data Analyst Intern</h3>
-                        <p className="text-emerald-400 font-medium mt-1">Cognifyz Technologies</p>
-                      </div>
-                      <span className="text-sm text-gray-400 bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0 border border-white/10">
-                        July 2025 – Present
-                      </span>
-                    </div>
-                    <ul className="list-disc list-inside text-gray-400 space-y-2 mt-4 text-sm md:text-base">
-                      <li>Analyzing datasets and extracting actionable insights for project requirements.</li>
-                      <li>Utilizing data analysis tools to complete assigned internship projects.</li>
-                    </ul>
-                  </div>
-
-                  {/* --- SECOND SET OF CARDS (Duplicated for the seamless infinite loop) --- */}
-                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors backdrop-blur-sm max-w-4xl mx-auto w-full">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-white">Full Stack Web & Software Developer Intern</h3>
-                        <p className="text-emerald-400 font-medium mt-1">SaiKet Systems</p>
-                      </div>
-                      <span className="text-sm text-gray-400 bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0 border border-white/10">
-                        July 2025 – Present
-                      </span>
-                    </div>
-                    <ul className="list-disc list-inside text-gray-400 space-y-2 mt-4 text-sm md:text-base">
-                      <li>Developing and maintaining full-stack web applications and software solutions.</li>
-                      <li>Completing technical tasks and collaborating on system architecture.</li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors backdrop-blur-sm max-w-4xl mx-auto w-full">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-white">Data Analyst Intern</h3>
-                        <p className="text-emerald-400 font-medium mt-1">Cognifyz Technologies</p>
-                      </div>
-                      <span className="text-sm text-gray-400 bg-white/5 px-3 py-1 rounded-full mt-2 md:mt-0 border border-white/10">
-                        July 2025 – Present
-                      </span>
-                    </div>
-                    <ul className="list-disc list-inside text-gray-400 space-y-2 mt-4 text-sm md:text-base">
-                      <li>Analyzing datasets and extracting actionable insights for project requirements.</li>
-                      <li>Utilizing data analysis tools to complete assigned internship projects.</li>
-                    </ul>
-                  </div>
-
+                  <h3 className="text-xl font-bold text-white mb-2">Master of Computer Applications (MCA)</h3>
+                  <p className="text-gray-300 font-medium">Adamas University, Kolkata</p>
+                  <span className="text-sm text-[#38bdf8] bg-[#0c4a6e] px-3.5 py-1.5 rounded-full mt-4 inline-block font-semibold shadow-sm border border-[#0284c7]/30">
+                    Expected 2026
+                  </span>
                 </div>
+
+                {/* BCA */}
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-[#38bdf8]/40 transition-colors backdrop-blur-sm group">
+                  <div className="w-12 h-12 rounded-full bg-[#38bdf8]/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                    <GraduationCap className="text-[#38bdf8]" size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">Bachelor of Computer Applications (BCA)</h3>
+                  <p className="text-gray-300 font-medium">Utkal University, Bhubaneswar</p>
+                  <span className="text-sm text-[#38bdf8] bg-[#0c4a6e] px-3.5 py-1.5 rounded-full mt-4 inline-block font-semibold shadow-sm border border-[#0284c7]/30">
+                    2021 – 2024
+                  </span>
+                </div>
+
               </div>
             )}
           </motion.div>
